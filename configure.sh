@@ -1,2 +1,2 @@
 #!/bin/sh
-gost -c /etc/gost/gost.json
+gost -C /etc/gost/gost.json
