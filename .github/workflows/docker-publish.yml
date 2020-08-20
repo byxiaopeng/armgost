@@ -1,0 +1,22 @@
+name: pushdocker
+on:
+  #schedule:
+  #  - cron: 35 21 * * 4
+  watch:
+    types: started
+jobs:
+  build:
+      runs-on: ubuntu-latest
+      name: Build image job
+      steps:
+          - name: Checkout master
+            uses: actions/checkout@master
+          - name: Build and publish image
+            uses: ilteoood/docker_buildx@master
+            with:
+              publish: true
+              imageName: byxiaopeng/armgost
+              platform: linux/arm64
+              tag: latest # 默认latest，可以针对平台，修改tag
+              dockerHubUser: ${{ secrets.DOCKER_USERNAME }} # docker hub userid
+              dockerHubPassword: ${{ secrets.DOCKER_PASSWORD }} # docker hub password
