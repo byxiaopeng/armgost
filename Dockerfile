@@ -20,4 +20,4 @@ VOLUME /etc/gost
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
-EXPOSE 1080 8080
+EXPOSE 1080
