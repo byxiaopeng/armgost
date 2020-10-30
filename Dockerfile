@@ -21,7 +21,7 @@ RUN mv /qydev_linux_arm64 /usr/bin/qydev
 
 VOLUME /etc/gost
 
-ADD configure.sh /configure.sh
-RUN chmod +x /configure.sh
-ENTRYPOINT /configure.sh
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT /entrypoint.sh
 EXPOSE 1080
