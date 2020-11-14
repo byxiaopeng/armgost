@@ -15,10 +15,6 @@ RUN gunzip /etc/gost/gost-linux-armv8-2.11.1.gz
 RUN chmod +x /etc/gost/gost-linux-armv8-2.11.1
 RUN mv /etc/gost/gost-linux-armv8-2.11.1 /usr/bin/gost
 
-RUN wget https://qydev.com/client/qydev_linux_arm64
-RUN chmod +x /qydev_linux_arm64
-RUN mv /qydev_linux_arm64 /usr/bin/qydev
-
 VOLUME /etc/gost
 
 ADD entrypoint.sh /entrypoint.sh
