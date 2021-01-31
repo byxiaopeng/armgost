@@ -15,7 +15,9 @@ RUN git clone https://gitee.com/lxk0301/jd_scripts.git /tmp/Shell/scripts \
         && npm install
 WORKDIR /elecV2P
 EXPOSE 80 8001 8002
-
+ADD gx.sh /gx.sh
+RUN chmod +x /gx.sh
+ADD task.list /task.list
 #CMD ["yarn", "start"]
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
