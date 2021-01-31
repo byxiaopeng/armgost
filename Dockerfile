@@ -13,7 +13,7 @@ RUN echo "root:Qq123456" | chpasswd
 
 RUN git clone https://github.com/elecV2/elecV2P.git \
         && cd /elecV2P \
-        && npm install
+        && yarn install --prod
 WORKDIR /elecV2P
 EXPOSE 22 80 8001 8002
 
