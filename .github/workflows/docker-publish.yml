@@ -1,22 +1,33 @@
 name: pushdocker
 on:
-  #schedule:
-  #  - cron: 35 21 * * 4
+  push:
+    branches:
+      - master
   watch:
-    types: started
+    types: started 
 jobs:
   build:
-      runs-on: ubuntu-latest
-      name: Build image job
-      steps:
-          - name: Checkout master
-            uses: actions/checkout@master
-          - name: Build and publish image
-            uses: ilteoood/docker_buildx@master
-            with:
-              publish: true
-              imageName: byxiaopeng/armgost
-              platform: linux/arm64
-              tag: latest # 默认latest，可以针对平台，修改tag
-              dockerHubUser: ${{ secrets.DOCKER_USERNAME }} # docker hub userid
-              dockerHubPassword: ${{ secrets.DOCKER_PASSWORD }} # docker hub password
+    runs-on: ubuntu-latest  
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install build dependencies
+      run: |
+        sudo apt-get -y update
+    - name: login docker
+      run: |
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        #启用 buildx 插件
+        export DOCKER_CLI_EXPERIMENTAL=enabled
+        docker buildx version
+        #启用 binfmt_misc
+        docker run --privileged --rm docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
+        #创建一个新的构建器
+        docker buildx create --use --name mybuilder
+        #启动构建器
+        docker buildx inspect mybuilder --bootstrap
+        #查看当前使用的构建器及构建器支持的 CPU 架构
+        docker buildx ls
+    - name: docker jd-base
+      run: |
+        #使用 buildx 构建 并推送倒hub
+        docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/armgost --platform=linux/arm64,linux/amd64 . --push
