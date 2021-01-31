@@ -12,4 +12,7 @@ RUN git clone https://github.com/elecV2/elecV2P.git \
 WORKDIR /elecV2P
 EXPOSE 80 8001 8002
 
-CMD ["yarn", "start"]
+#CMD ["yarn", "start"]
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT /entrypoint.sh
