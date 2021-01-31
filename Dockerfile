@@ -5,7 +5,6 @@ RUN set -ex \
         && apk add --no-cache tzdata curl moreutils git jq vim zip bash perl wget \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
-RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
 RUN git clone https://github.com/elecV2/elecV2P.git \
         && cd /elecV2P \
