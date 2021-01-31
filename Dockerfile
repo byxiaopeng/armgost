@@ -16,7 +16,8 @@ RUN git clone https://github.com/elecV2/elecV2P.git \
 RUN git clone https://gitee.com/lxk0301/jd_scripts.git /tmp/Shell/scripts \
         && cd /tmp/Shell/scripts \
         && git checkout master \
-        && npm install
+        && yarn
+        #&& npm install
 WORKDIR /elecV2P
 EXPOSE 22 80 8001 8002
 RUN mv /elecV2P/script/JSFile/deletelog.js /deletelog.js
