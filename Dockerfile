@@ -18,7 +18,7 @@ RUN git clone https://gitee.com/lxk0301/jd_scripts.git /tmp/Shell/scripts \
         && git checkout master \
         && npm install
 WORKDIR /elecV2P
-EXPOSE 80 8001 8002
+EXPOSE 22 80 8001 8002
 RUN mv /elecV2P/script/JSFile/deletelog.js /deletelog.js
 ADD gx.sh /gx.sh
 RUN chmod +x /gx.sh
