@@ -17,4 +17,4 @@ RUN git clone https://github.com/elecV2/elecV2P.git \
 WORKDIR /elecV2P
 EXPOSE 22 80 8001 8002
 
-CMD ["node", "index.js"]
+CMD ["yarn", "start"]
