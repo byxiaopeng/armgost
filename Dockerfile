@@ -1,4 +1,4 @@
-FROM arm64v8/node:alpine
+FROM node:alpine
 
 RUN set -ex \
         && apk update && apk upgrade\
