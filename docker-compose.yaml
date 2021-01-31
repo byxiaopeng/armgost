@@ -1,0 +1,31 @@
+elecv2p:
+  image: byxiaopeng/armgost
+  container_name: elecv2p
+  restart: always
+  privileged: true
+  ports:
+    - "8100:80"
+    - "8101:8001"
+    - "8102:8002"
+  volumes:
+    - "/elecv2p/JSFile:/elecV2P/script/JSFile"
+    - "/elecv2p/Lists:/elecV2P/script/Lists"
+    - "/elecv2p/Store:/elecV2P/script/Store"
+    - "/elecv2p/Shell:/elecV2P/script/Shell"
+    - "/elecv2p/rootCA:/elecV2P/rootCA"
+    - "/elecv2p/efss:/elecV2P/efss"
+  environment:
+     # 注意环境变量填写值的时候一律不需要引号（""或者''）下面这些只是事例，根据自己的需求增加删除
+    #jd cookies
+    # 例: JD_COOKIE=pt_key=XXX;pt_pin=XXX
+    - JD_COOKIE=
+    #微信server酱通
+    - PUSH_KEY=
+    #Bark App通知
+    - BARK_PUSH=
+    #telegram机器人通知
+    - TG_BOT_TOKEN=
+    - TG_USER_ID=
+    #钉钉机器人通知
+    - DD_BOT_TOKEN=
+    - DD_BOT_SECRET=
