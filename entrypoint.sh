@@ -21,4 +21,5 @@ node /elecV2P/script/Shell/scripts/jd_crazy_joy_coin.js >/dev/null 2>&1 &
 echo "启动jd_crazy_joy_coin挂机完成"
 /usr/sbin/sshd
 echo "启动SSH成功"
-cd /elecV2P && yarn start
+cd /elecV2P && node index.js
+#yarn start
