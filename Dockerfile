@@ -24,7 +24,7 @@ RUN mv /elecV2P/script/JSFile/deletelog.js /deletelog.js
 ADD gx.sh /gx.sh
 RUN chmod +x /gx.sh
 ADD task.list /task.list
-#CMD ["yarn", "start"]
+CMD ["yarn", "start"]
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
