@@ -22,4 +22,4 @@ echo "启动jd_crazy_joy_coin挂机完成"
 /usr/sbin/sshd
 echo "启动SSH成功"
 cd /elecV2P && pm2 start index.js
-#tail -f /dev/null
+tail -f /dev/null
