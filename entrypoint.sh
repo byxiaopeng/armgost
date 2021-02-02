@@ -9,13 +9,9 @@ if [ ! -e '/elecV2P/script/JSFile/deletelog.js' ]; then
 fi
 
 
-if [ ! -e '/elecV2P/script/Shell/gx.sh' ]; then
-    mv /gx.sh /elecV2P/script/Shell/gx.sh
-    echo "拷贝更新代码"
-fi
-if [ ! -e '/elecV2P/script/Lists/task.list' ]; then
-    mv /task.list /elecV2P/script/Lists/task.list
-    echo "拷贝定时任务"
+if [ ! -e '/elecV2P/script/Lists/useragent.list' ]; then
+    cp -r /tmp/Lists /elecV2P/script
+    echo "拷贝Lists代码"
 fi
 node /elecV2P/script/Shell/scripts/jd_crazy_joy_coin.js >/dev/null 2>&1 &
 echo "启动jd_crazy_joy_coin挂机完成"
