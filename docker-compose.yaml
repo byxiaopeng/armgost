@@ -19,13 +19,3 @@ elecv2p:
     #jd cookies
     # 例: JD_COOKIE=pt_key=XXX;pt_pin=XXX
     - JD_COOKIE=
-    #微信server酱通
-    - PUSH_KEY=
-    #Bark App通知
-    - BARK_PUSH=
-    #telegram机器人通知
-    - TG_BOT_TOKEN=
-    - TG_USER_ID=
-    #钉钉机器人通知
-    - DD_BOT_TOKEN=
-    - DD_BOT_SECRET=
