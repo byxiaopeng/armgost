@@ -17,6 +17,8 @@ fi
 if [[ ${ENABLE_HANGUP} == true ]]; then
     node /elecV2P/script/Shell/scripts/jd_crazy_joy_coin.js >/dev/null 2>&1 &
     echo -e "启动joy挂机程序"
+elif [[ ${ENABLE_HANGUP} == false ]]; then
+  echo -e "设置不挂机joy，跳过"
 fi
 #node /elecV2P/script/Shell/scripts/jd_crazy_joy_coin.js >/dev/null 2>&1 &
 #echo "启动jd_crazy_joy_coin挂机完成"
