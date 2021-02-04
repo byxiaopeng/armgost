@@ -18,4 +18,6 @@ elecv2p:
      # 注意环境变量填写值的时候一律不需要引号（""或者''）下面这些只是事例，根据自己的需求增加删除
     #jd cookies
     # 例: JD_COOKIE=pt_key=XXX;pt_pin=XXX
+    #默认启动挂机程序  需要配置cookie
+    - ENABLE_HANGUP=true
     - JD_COOKIE=
