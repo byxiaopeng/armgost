@@ -21,7 +21,7 @@ RUN git clone https://gitee.com/lxk0301/jd_scripts.git /tmp/Shell/scripts \
         #&& npm install
 WORKDIR /elecV2P
 EXPOSE 22 80 8001 8002
-
+RUN mv /elecV2P/script/JSFile/deletelog.js /deletelog.js
 RUN cp -r /elecV2P/script/Lists /tmp
 #CMD ["yarn", "start"]
 ADD entrypoint.sh /entrypoint.sh
