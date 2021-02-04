@@ -2,7 +2,7 @@
 FROM alpine
 RUN set -ex \
         && apk update && apk upgrade\
-        && apk add --no-cache openssh yarn tzdata curl moreutils git jq vim zip bash perl wget \
+        && apk add --no-cache yarn tzdata curl moreutils git jq vim zip bash perl wget \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
 RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
@@ -20,7 +20,7 @@ RUN git clone https://gitee.com/lxk0301/jd_scripts.git /tmp/Shell/scripts \
         && yarn
         #&& npm install
 WORKDIR /elecV2P
-EXPOSE 22 80 8001 8002
+EXPOSE 80 8001 8002
 RUN mv /elecV2P/script/JSFile/deletelog.js /deletelog.js
 RUN cp -r /elecV2P/script/Lists /tmp
 #CMD ["yarn", "start"]
