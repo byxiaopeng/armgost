@@ -1,5 +1,5 @@
 elecv2p:
-  image: byxiaopeng/armgost
+  image: byxiaopeng/elecv2pjd
   container_name: elecv2p
   restart: always
   privileged: true
