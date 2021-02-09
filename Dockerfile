@@ -2,7 +2,7 @@
 FROM alpine
 RUN set -ex \
         && apk update && apk upgrade\
-        && apk add --no-cache yarn tzdata curl moreutils git jq vim zip bash perl wget \
+        && apk add --no-cache yarn tzdata curl moreutils git jq vim bash perl wget python3 \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
 RUN git clone https://github.com/elecV2/elecV2P.git \
