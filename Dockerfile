@@ -17,6 +17,9 @@ RUN git clone https://github.com/elecV2/elecV2P.git \
         && yarn \
         && yarn global add pm2
 #修改Shell超时时间为一天
+
+RUN pip3 install requests rsa beautifulsoup4
+#安装PY3的一些支持库
 WORKDIR /elecV2P
 EXPOSE 80 8001 8002
 RUN mv /elecV2P/script/JSFile/deletelog.js /deletelog.js
