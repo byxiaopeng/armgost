@@ -1,7 +1,8 @@
 FROM alpine
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add --no-cache tzdata curl moreutils git jq bash perl wget yarn python3-dev \
+        && apk add tzdata curl moreutils git jq bash perl wget yarn \
+        && apk add python3-dev py3-pip py3-cryptography \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
       
