@@ -1,4 +1,3 @@
-#FROM node:alpine
 FROM alpine
 RUN set -ex \
         && apk update && apk upgrade\
