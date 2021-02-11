@@ -20,5 +20,6 @@ if [[ ${ENABLE_HANGUP} == true ]]; then
 elif [[ ${ENABLE_HANGUP} == false ]]; then
   echo -e "设置不挂机joy，跳过"
 fi
-cd /elecV2P && pm2 start index.js
+#cd /elecV2P && pm2 start index.js
+cd /elecV2P && pm2-runtime index.js
 tail -f /dev/null
