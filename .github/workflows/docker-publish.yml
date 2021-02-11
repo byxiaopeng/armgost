@@ -1,4 +1,4 @@
-name: pushdocker
+name: elecv2p-jd
 on:
   push:
     branches:
