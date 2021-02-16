@@ -1,5 +1,6 @@
 os: linux
 dist: focal
+language: c
 install:
   - sudo apt-get -y update
 script:
