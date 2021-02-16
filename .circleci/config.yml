@@ -1,0 +1,14 @@
+version: 2
+jobs:
+ build:
+   machine: true
+   steps:
+     - checkout
+     - run: |
+         echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+
+     # build the application image
+     - run: docker build -t byxiaopeng/elecv2pjd .
+
+     # deploy the image
+     - run: docker push byxiaopeng/elecv2pjd
