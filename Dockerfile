@@ -14,6 +14,7 @@ RUN git clone https://gitee.com/lxk0301/jd_scripts.git /tmp/Shell/scripts \
 RUN git clone https://github.com/elecV2/elecV2P.git \
         && cd /elecV2P \
         && sed -i "s/60000/86400000/g" /elecV2P/func/exec.js \
+        && rm -r /elecV2P/package.json
         && add package.json /elecV2P/package.json \
         && yarn
         #&& yarn global add pm2
