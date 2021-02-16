@@ -3,9 +3,9 @@ if [ ! -e '/elecV2P/script/Shell/scripts/jd_crazy_joy_coin.js' ]; then
     cp -r /tmp/Shell/scripts /elecV2P/script/Shell
     echo "拷贝仓库代码"
 fi
-if [ ! -e '/elecV2P/script/JSFile/deletelog.js' ]; then
-    mv /deletelog.js /elecV2P/script/JSFile/deletelog.js
-    echo "拷贝删除日志Js"
+if [ ! -e '/elecV2P/script/JSFile/0body.js' ]; then
+    cp -r /tmp/JSFile /elecV2P/script
+    echo "拷贝JSFile代码"
 fi
 
 
