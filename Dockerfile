@@ -8,14 +8,15 @@ RUN set -ex \
       
 RUN git clone https://gitee.com/lxk0301/jd_scripts.git /tmp/Shell/scripts \
         && cd /tmp/Shell/scripts \
-        && git checkout master \
-        && yarn
+        && git checkout master
+        #&& yarn
         #&& npm install
 RUN git clone https://github.com/elecV2/elecV2P.git \
         && cd /elecV2P \
         && sed -i "s/60000/86400000/g" /elecV2P/func/exec.js \
-        && yarn \
-        && yarn global add pm2
+        && add package.json /elecV2P/package.json \
+        && yarn
+        #&& yarn global add pm2
 #修改Shell超时时间为一天
 
 RUN pip3 install requests rsa beautifulsoup4
