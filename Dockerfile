@@ -12,13 +12,12 @@ RUN git clone https://gitee.com/lxk0301/jd_scripts.git /tmp/Shell/scripts \
         #&& yarn
         #&& npm install
 RUN git clone https://github.com/elecV2/elecV2P.git \
-        && cd /elecV2P \
         && sed -i "s/60000/86400000/g" /elecV2P/func/exec.js \
-        && rm -r /elecV2P/package.json \
-        && add package.json /elecV2P/package.json \
-        && yarn
+        && rm -r /elecV2P/package.json
         #&& yarn global add pm2
 #修改Shell超时时间为一天
+add package.json /elecV2P/package.json
+RUN cd /elecV2P && yarn
 
 RUN pip3 install requests rsa beautifulsoup4
 #安装PY3的一些支持库
