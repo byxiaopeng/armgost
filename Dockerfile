@@ -22,7 +22,9 @@ RUN pip3 install requests rsa beautifulsoup4
 #安装PY3的一些支持库
 WORKDIR /elecV2P
 EXPOSE 80 8001 8002
-RUN mv /elecV2P/script/JSFile/deletelog.js /deletelog.js
+#拷贝JSFile目录
+RUN cp -r /elecV2P/script/JSFile /tmp
+#拷贝lists目录
 RUN cp -r /elecV2P/script/Lists /tmp
 #CMD ["yarn", "start"]
 ADD entrypoint.sh /entrypoint.sh
