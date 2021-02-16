@@ -16,6 +16,9 @@ script:
   - docker buildx inspect mybuilder --bootstrap
         #查看当前使用的构建器及构建器支持的 CPU 架构
   - docker buildx ls
+env:
+  - DOCKER_USERNAME=DOCKER_USERNAME
+  - DOCKER_PASSWORD=DOCKER_PASSWORD
 deploy:
    #使用 buildx 构建 并推送倒hub
   - docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/elecv2pjd --platform=linux/arm64,linux/amd64 . --push
