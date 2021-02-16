@@ -26,7 +26,9 @@ EXPOSE 80 8001 8002
 RUN cp -r /elecV2P/script/JSFile /tmp
 #拷贝lists目录
 RUN cp -r /elecV2P/script/Lists /tmp
-#CMD ["yarn", "start"]
+
+ENV PATH /elecV2P/node_modules/.bin:$PATH
+#添加变量
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
