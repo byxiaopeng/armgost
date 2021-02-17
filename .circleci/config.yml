@@ -12,10 +12,8 @@ jobs:
         #version: 20.10.2
      - run: |
          echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-         export DOCKER_BUILDKIT=1
-         docker build --platform=local -o . git://github.com/docker/buildx
-         mkdir -p ~/.docker/cli-plugins && mv buildx ~/.docker/cli-plugins/docker-buildx
-         #export DOCKER_CLI_EXPERIMENTAL=enabled
+         git clone git://github.com/docker/buildx && cd buildx
+         make install
          docker buildx version
          docker run --privileged --rm docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
          docker buildx create --use --name mybuilder
