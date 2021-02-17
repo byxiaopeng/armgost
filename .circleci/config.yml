@@ -7,7 +7,7 @@ jobs:
      - checkout
      - run:
          name: Install Docker client
-         command: apk add docker-cli
+         command: apk add docker-cli git make
      #- setup_remote_docker:
         #version: 20.10.2
      - run: |
