@@ -1,15 +1,9 @@
 version: 2
 jobs:
  build:
-   docker:
-   - image: circleci/postgres:alpine
+   machine: true
    steps:
      - checkout
-     - run:
-         name: Install Docker client
-         command: apk add docker-cli git make wget 
-     #- setup_remote_docker:
-        #version: 20.10.2
      - run: |
          echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
          mkdir -p ~/.docker/cli-plugins
