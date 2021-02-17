@@ -6,7 +6,7 @@ jobs:
      - checkout
      - run: |
          echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-         export DOCKER_CLI_EXPERIMENTAL=enabled
+         #export DOCKER_CLI_EXPERIMENTAL=enabled
          docker buildx version
          docker run --privileged --rm docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
          docker buildx create --use --name mybuilder
