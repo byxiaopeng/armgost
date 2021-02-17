@@ -7,13 +7,15 @@ jobs:
      - checkout
      - run:
          name: Install Docker client
-         command: apk add docker-cli git make
+         command: apk add docker-cli git make wget 
      #- setup_remote_docker:
         #version: 20.10.2
      - run: |
          echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-         git clone git://github.com/docker/buildx && cd buildx
-         make install
+         mkdir -p ~/.docker/cli-plugins
+         wget https://github.com/docker/buildx/releases/download/v0.5.1/buildx-v0.5.1.linux-amd64
+         mv ./buildx-v0.5.1.linux-amd64 ~/.docker/cli-plugins/docker-buildx
+         chmod +x ~/.docker/cli-plugins/docker-buildx
          docker buildx version
          docker run --privileged --rm docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
          docker buildx create --use --name mybuilder
