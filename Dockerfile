@@ -1,7 +1,7 @@
 FROM alpine
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add tzdata curl moreutils git jq bash perl wget yarn \
+        && apk add tzdata curl moreutils git jq bash perl wget yarn npm \
         && apk add python3-dev py3-pip py3-cryptography \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
@@ -17,7 +17,7 @@ RUN git clone https://github.com/elecV2/elecV2P.git \
         #&& yarn global add pm2
 #修改Shell超时时间为一天
 add package.json /elecV2P/package.json
-RUN cd /elecV2P && yarn
+RUN cd /elecV2P && npm install
 
 RUN pip3 install requests rsa beautifulsoup4
 #安装PY3的一些支持库
