@@ -7,7 +7,7 @@ jobs:
      - checkout
      
      - setup_remote_docker:
-        version: 19.03.13
+        version: 20.10.2
      - run: |
          echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
          export DOCKER_CLI_EXPERIMENTAL=enabled
