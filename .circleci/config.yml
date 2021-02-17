@@ -5,12 +5,14 @@ jobs:
    - image: circleci/golang:1.15
    steps:
      - checkout
-     
-     - setup_remote_docker:
-        version: 20.10.2
-        DOCKER_CLI_EXPERIMENTAL= enabled
+     - run:
+         name: Install Docker client
+         command: apk add docker-cli
+     #- setup_remote_docker:
+        #version: 20.10.2
      - run: |
          echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+         export DOCKER_CLI_EXPERIMENTAL=enabled
          docker buildx version
          docker run --privileged --rm docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
          docker buildx create --use --name mybuilder
