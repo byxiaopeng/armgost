@@ -8,7 +8,6 @@ jobs:
      
      - setup_remote_docker:
         version: 19.03.13
-        docker_layer_caching: true
      - run: |
          echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
          export DOCKER_CLI_EXPERIMENTAL=enabled
