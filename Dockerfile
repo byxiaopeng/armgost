@@ -3,6 +3,7 @@ RUN set -ex \
         && apk update && apk upgrade \
         && apk add tzdata curl moreutils git jq bash perl wget yarn npm \
         && apk add python3-dev py3-pip py3-cryptography \
+        && npm i -g npm to update \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
       
