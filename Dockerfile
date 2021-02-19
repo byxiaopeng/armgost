@@ -1,7 +1,7 @@
 FROM alpine
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add tzdata curl moreutils git jq bash perl wget yarn npm make \
+        && apk add tzdata curl moreutils git jq bash perl nodejs yarn npm make \
         && apk add python3 py3-pip py3-cryptography \
         && npm i -g npm to update \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
