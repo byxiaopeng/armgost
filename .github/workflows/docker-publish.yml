@@ -1,8 +1,8 @@
 name: elecv2p-jd
 on:
-  #push:
-    #branches:
-      #- master
+  push:
+    branches:
+      - master
   watch:
     types: started 
 jobs:
