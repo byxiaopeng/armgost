@@ -15,8 +15,8 @@ RUN set -ex \
         && echo "Asia/Shanghai" > /etc/timezone
       
 RUN git clone -b $REPO_BRANCH $REPO_URL /tmp/Shell/scripts \
-        && cd /tmp/Shell/scripts \
-        && git checkout master
+        && cd /tmp/Shell/scripts
+        #&& git checkout master
         #&& yarn
         #&& npm install
 RUN git clone https://github.com/elecV2/elecV2P.git \
