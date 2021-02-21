@@ -15,12 +15,20 @@ if [ ! -e '/elecV2P/script/Lists/useragent.list' ]; then
     echo "拷贝Lists代码"
 fi
 
+
+if [ ! -e '/elecV2P/script/Shell/gx.sh' ]; then
+    mv /gx.sh /elecV2P/script/Shell/gx.sh
+    echo "拷贝更新代码"
+fi
+
 if [[ ${ENABLE_HANGUP} == true ]]; then
     node /elecV2P/script/Shell/scripts/jd_crazy_joy_coin.js >/dev/null 2>&1 &
     echo -e "启动joy挂机程序"
 elif [[ ${ENABLE_HANGUP} == false ]]; then
   echo -e "设置不挂机joy，跳过"
 fi
-#cd /elecV2P && node index.js
-cd /elecV2P && pm2-runtime index.js
+echo "首次启动更新仓库代码"
+/elecV2P/script/Shell/gx.sh
+cd /elecV2P && node index.js
+#cd /elecV2P && pm2-runtime index.js
 tail -f /dev/null
