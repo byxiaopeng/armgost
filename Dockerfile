@@ -12,7 +12,7 @@ RUN set -ex \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
       
-RUN git clone https://gitee.com/lxk0301/jd_scripts.git /tmp/Shell/scripts \
+RUN git clone -b https://gitee.com/lxk0301/jd_scripts.git /tmp/Shell/scripts \
         && cd /tmp/Shell/scripts \
         && git checkout master
         #&& yarn
