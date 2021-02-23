@@ -3,8 +3,6 @@ echo "开始执行更新仓库代码"
 cd /elecV2P/script/Shell/scripts
 git reset --hard
 git -C /elecV2P/script/Shell/scripts pull --rebase
-echo "移动文件到JSFile文件夹"
-cp -f /elecV2P/script/Shell/scripts/jd*.js /elecV2P/script/JSFile
 if [[ ${ENABLE_HANGUP} == true ]]; then
     jdpid=$(ps -ef | grep "jd_crazy" | awk '{print $1}')
     echo "joy进程pid=$jdpid"
