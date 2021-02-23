@@ -11,6 +11,7 @@ RUN set -ex \
         && echo -e $KEY > /root/.ssh/id_rsa \
         && chmod 600 /root/.ssh/id_rsa \
         && ssh-keyscan gitee.com > /root/.ssh/known_hosts \
+        && ssh-keyscan github.com > /root/.ssh/known_hosts \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
       
