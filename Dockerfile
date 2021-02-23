@@ -5,7 +5,6 @@ ARG KEY="-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAA
 RUN set -ex \
         && apk update && apk upgrade \
         && apk add tzdata curl moreutils git jq bash perl nodejs npm openssh-client \
-        && apk add python3 py3-pip py3-cryptography \
         && npm i -g npm to update \
         && mkdir -p /root/.ssh \
         && echo -e $KEY > /root/.ssh/id_rsa \
@@ -24,7 +23,6 @@ RUN git clone https://github.com/elecV2/elecV2P.git \
 add package.json /elecV2P/package.json
 RUN cd /elecV2P && npm install
 
-RUN pip3 install requests rsa beautifulsoup4
 #安装PY3的一些支持库
 WORKDIR /elecV2P
 EXPOSE 80 8001 8002
