@@ -5,7 +5,6 @@ if [ ! -e '/elecV2P/script/Shell/scripts/jd_crazy_joy_coin.js' ]; then
 fi
 if [ ! -e '/elecV2P/script/JSFile/0body.js' ]; then
     cp -r /tmp/JSFile /elecV2P/script
-    cp -f /tmp/Shell/scripts/jd*.js /elecV2P/script/JSFile
     echo "拷贝JSFile代码"
 fi
 
