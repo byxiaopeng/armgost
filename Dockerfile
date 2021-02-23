@@ -10,7 +10,8 @@ RUN set -ex \
         && mkdir -p /root/.ssh \
         && echo -e $KEY > /root/.ssh/id_rsa \
         && chmod 600 /root/.ssh/id_rsa \
-        && ssh-keyscan gitee.com > /root/.ssh/known_hosts \
+        #&& ssh-keyscan gitee.com > /root/.ssh/known_hosts \
+        && ssh -T git@gitee.com \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
       
