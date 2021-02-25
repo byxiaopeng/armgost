@@ -22,6 +22,5 @@ if [ ! -e '/elecV2P/script/Shell/gx.sh' ]; then
 fi
 echo "首次启动更新仓库代码和挂机判断"
 /elecV2P/script/Shell/gx.sh
-cd /elecV2P && node index.js
 #cd /elecV2P && pm2-runtime index.js
 tail -f /dev/null
