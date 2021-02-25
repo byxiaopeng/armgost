@@ -36,4 +36,3 @@ ENV PATH /elecV2P/node_modules/.bin:$PATH
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
-CMD ["pm2-runtime", "index.js"]
