@@ -1,4 +1,5 @@
 #!/bin/bash
+git clone -b $REPO_BRANCH $REPO_URL /tmp/Shell/scripts
 if [ ! -e '/elecV2P/script/Shell/scripts/jd_crazy_joy_coin.js' ]; then
     cp -r /tmp/Shell/scripts /elecV2P/script/Shell
     echo "拷贝仓库代码"
