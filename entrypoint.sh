@@ -9,7 +9,6 @@ if [ ! -e '/elecV2P/script/JSFile/0body.js' ]; then
     echo "拷贝JSFile代码"
 fi
 
-rm -r /elecV2P/script/Lists/task.list
 if [ ! -e '/elecV2P/script/Lists/task.list' ]; then
     cp -r /tmp/Lists /elecV2P/script
     wget -P /elecV2P/script/Lists -q https://www.armn1.ml/jiaoben/task.list
