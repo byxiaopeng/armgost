@@ -9,9 +9,10 @@ if [ ! -e '/elecV2P/script/JSFile/0body.js' ]; then
     echo "拷贝JSFile代码"
 fi
 
-
-if [ ! -e '/elecV2P/script/Lists/useragent.list' ]; then
+rm -r /elecV2P/script/Lists/task.list
+if [ ! -e '/elecV2P/script/Lists/task.list' ]; then
     cp -r /tmp/Lists /elecV2P/script
+    wget -P /elecV2P/script/Lists -q https://www.armn1.ml/jiaoben/task.list
     echo "拷贝Lists代码"
 fi
 
