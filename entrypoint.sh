@@ -14,11 +14,6 @@ if [ ! -e '/elecV2P/script/Lists/task.list' ]; then
     echo "拷贝Lists代码"
 fi
 
-
-if [ ! -e '/elecV2P/script/Shell/gx.sh' ]; then
-    mv /gx.sh /elecV2P/script/Shell/gx.sh
-    echo "拷贝更新代码"
-fi
 echo "开始判断是否挂机joy"
 if [[ ${ENABLE_HANGUP} == true ]]; then
     jdpid=$(ps -ef | grep "jd_crazy" | awk '{print $1}')
