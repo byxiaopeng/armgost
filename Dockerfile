@@ -16,6 +16,8 @@ RUN set -ex \
 RUN git clone -b $REPO_BRANCH $REPO_URL /tmp/Shell/scripts
 RUN git clone https://github.com/elecV2/elecV2P.git \
         && sed -i "s/60000/86400000/g" /elecV2P/func/exec.js \
+        #推送BUG
+        && sed -i "s/replaceAll/replace/g" /elecV2P/utils/feed.js \
         && rm -r /elecV2P/script/Lists/task.list \
         && rm -r /elecV2P/package.json
         #&& yarn global add pm2
