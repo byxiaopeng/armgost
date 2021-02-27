@@ -18,16 +18,10 @@ jobs:
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         #启用 buildx 插件
         export DOCKER_CLI_EXPERIMENTAL=enabled
-        docker buildx version
-        #启用 binfmt_misc
         docker run --privileged --rm docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
-        #创建一个新的构建器
         docker buildx create --use --name mybuilder
-        #启动构建器
         docker buildx inspect mybuilder --bootstrap
-        #查看当前使用的构建器及构建器支持的 CPU 架构
         docker buildx ls
     - name: docker elecv2pjd
       run: |
-        #使用 buildx 构建 并推送倒hub
-        docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/elecv2pjd --platform=linux/arm64,linux/amd64 . --push
+        docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/elecv2pjd --platform=linux/arm64,linux/amd64,linux/arm/v7 . --push
