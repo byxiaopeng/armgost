@@ -21,7 +21,7 @@ docker run --restart=always \
 
 # 升级 Docker 镜像。（如果没有使用持久化存储，升级后所有个人数据会丢失，请提前备份）
 docker rm -f elecv2p           # 先删除旧的容器
-docker pull byxiaopeng/elecv2p     # 再下载新的镜像。镜像名注意要和之前使用的相对应
+docker pull byxiaopeng/elecv2pjd    # 再下载新的镜像。镜像名注意要和之前使用的相对应
 # 再使用之前的 docker run xxxx 命令重新启动一下
 ```
 使用教程请参考
