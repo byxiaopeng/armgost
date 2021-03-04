@@ -21,9 +21,8 @@ RUN rm -r /usr/local/app/script/Lists/task.list
 RUN rm -r /usr/local/app/package.json
 #修改Shell超时时间为一天
 add package.json /usr/local/app/package.json
-RUN cd /elecV2P && npm install
+RUN cd /usr/local/app && npm install
 
-#安装PY3的一些支持库
 WORKDIR /usr/local/app
 EXPOSE 80 8001 8002
 #拷贝JSFile目录
