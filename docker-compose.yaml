@@ -4,20 +4,18 @@ elecv2p:
   restart: always
   privileged: true
   ports:
-    - "8100:80"
-    - "8101:8001"
-    - "8102:8002"
+    - "80:80"
+    - "8001:8001"
+    - "8002:8002"
   volumes:
-    - "/elecv2p/JSFile:/elecV2P/script/JSFile"
-    - "/elecv2p/Lists:/elecV2P/script/Lists"
-    - "/elecv2p/Store:/elecV2P/script/Store"
-    - "/elecv2p/Shell:/elecV2P/script/Shell"
-    - "/elecv2p/rootCA:/elecV2P/rootCA"
-    - "/elecv2p/efss:/elecV2P/efss"
+    - "/elecv2p/JSFile:/usr/local/app/script/JSFile"
+    - "/elecv2p/Lists:/usr/local/app/script/Lists"
+    - "/elecv2p/Store:/usr/local/app/script/Store"
+    - "/elecv2p/Shell:/usr/local/app/script/Shell"
+    - "/elecv2p/rootCA:/usr/local/app/rootCA"
+    - "/elecv2p/efss:/usr/local/app/efss"
+    - "/elecv2p/logs:/usr/local/app/logs"
   environment:
-     # 注意环境变量填写值的时候一律不需要引号（""或者''）下面这些只是事例，根据自己的需求增加删除
-    #jd cookies
-    # 例: JD_COOKIE=pt_key=XXX;pt_pin=XXX
-    #默认启动挂机程序  需要配置cookie
-    - ENABLE_HANGUP=true
+    # 注意环境变量填写值的时候一律不需要引号（""或者''）下面这些只是事例，根据自己的需求增加删除
+    #如果需要node环境运行jd脚本可填写
     - JD_COOKIE=
