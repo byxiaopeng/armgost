@@ -5,7 +5,7 @@ ARG KEY="-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAA
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add tzdata curl wget git moreutils jq bash perl nodejs npm openssh-client \
+        && apk add tzdata curl wget git bash nodejs npm openssh-client \
         && npm i -g npm to update \
         && mkdir -p /root/.ssh \
         && echo -e $KEY > /root/.ssh/id_rsa \
@@ -14,23 +14,23 @@ RUN set -ex \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
 RUN git clone -b $REPO_BRANCH $REPO_URL /tmp/Shell/scripts
-RUN git clone https://github.com/elecV2/elecV2P.git \
-        && sed -i "s/60000/86400000/g" /elecV2P/func/exec.js \
-        && rm -r /elecV2P/script/Lists/task.list \
-        && rm -r /elecV2P/package.json
-        #&& yarn global add pm2
+
+RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
+RUN sed -i "s/60000/86400000/g" /usr/local/app/func/exec.js
+RUN rm -r /usr/local/app/script/Lists/task.list
+RUN rm -r /usr/local/app/package.json
 #修改Shell超时时间为一天
-add package.json /elecV2P/package.json
+add package.json /usr/local/app/package.json
 RUN cd /elecV2P && npm install
 
 #安装PY3的一些支持库
-WORKDIR /elecV2P
+WORKDIR /usr/local/app
 EXPOSE 80 8001 8002
 #拷贝JSFile目录
-RUN cp -r /elecV2P/script/JSFile /tmp
+RUN cp -r /usr/local/app/script/JSFile /tmp
 #拷贝lists目录
-RUN cp -r /elecV2P/script/Lists /tmp
-ENV PATH /elecV2P/node_modules/.bin:$PATH
+RUN cp -r /usr/local/app/script/Lists /tmp
+ENV PATH /usr/local/app/node_modules/.bin:$PATH
 #添加变量
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
