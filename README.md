@@ -2,7 +2,7 @@
 
 部署docker
 
-基础镜像：byxiaopeng/elecv2p
+基础镜像：byxiaopeng/elecv2pjd
 
 ``` sh
 
