@@ -13,5 +13,5 @@ if [ ! -e '/usr/local/app/script/Lists/task.list' ]; then
     wget -P /elecV2P/script/Lists -q https://www.armn1.ml/jiaoben/task.list
     echo "拷贝Lists代码"
 fi
-cd /elecV2P && pm2 start index.js --name elecV2P
+cd /usr/local/app && pm2 start index.js --name elecV2P
 tail -f /dev/null
