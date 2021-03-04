@@ -1,7 +1,8 @@
 name: elecv2p-jd
 on:
-  watch:
-    types: started 
+  push:
+    branches:
+      - master
 jobs:
   build:
     runs-on: Ubuntu-20.04  
