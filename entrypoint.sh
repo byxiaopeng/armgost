@@ -1,15 +1,15 @@
 #!/bin/bash
-if [ ! -e '/elecV2P/script/Shell/scripts/jdCookie.js' ]; then
-    cp -r /tmp/Shell/scripts /elecV2P/script/Shell
+if [ ! -e '/usr/local/app/script/Shell/scripts/jdCookie.js' ]; then
+    cp -r /tmp/Shell/scripts /usr/local/app/script/Shell
     echo "拷贝仓库代码"
 fi
-if [ ! -e '/elecV2P/script/JSFile/0body.js' ]; then
-    cp -r /tmp/JSFile /elecV2P/script
+if [ ! -e '/usr/local/app/script/JSFile/0body.js' ]; then
+    cp -r /tmp/JSFile /usr/local/app/script
     echo "拷贝JSFile代码"
 fi
 
-if [ ! -e '/elecV2P/script/Lists/task.list' ]; then
-    cp -r /tmp/Lists /elecV2P/script
+if [ ! -e '/usr/local/app/script/Lists/task.list' ]; then
+    cp -r /tmp/Lists /usr/local/app/script
     wget -P /elecV2P/script/Lists -q https://www.armn1.ml/jiaoben/task.list
     echo "拷贝Lists代码"
 fi
