@@ -10,13 +10,13 @@
 docker run --restart=always \
   -d --name elecv2p \
   -p 80:80 -p 8001:8001 -p 8002:8002 \
-  -v /elecv2p/JSFile:/elecV2P/script/JSFile \
-  -v /elecv2p/Lists:/elecV2P/script/Lists \
-  -v /elecv2p/Store:/elecV2P/script/Store \
-  -v /elecv2p/Shell:/elecV2P/script/Shell \
-  -v /elecv2p/rootCA:/elecV2P/rootCA \
-  -v /elecv2p/efss:/elecV2P/efss \
-  -v /elecv2p/logs:/elecV2P/logs \
+  -v /elecv2p/JSFile:/usr/local/app/script/JSFile \
+  -v /elecv2p/Lists:/usr/local/app/script/Lists \
+  -v /elecv2p/Store:/usr/local/app/script/Store \
+  -v /elecv2p/Shell:/usr/local/app/script/Shell \
+  -v /elecv2p/rootCA:/usr/local/app/rootCA \
+  -v /elecv2p/efss:/usr/local/app/efss \
+  -v /elecv2p/logs:/usr/local/app/logs \
   byxiaopeng/elecv2pjd
 
 # 升级 Docker 镜像。（如果没有使用持久化存储，升级后所有个人数据会丢失，请提前备份）
