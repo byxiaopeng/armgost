@@ -3,6 +3,8 @@
 #GIT_URL=https://<name>:<password>@github.com/<name>/<repository>
 case $SA_TYPE in
 "git")
+  rm -r /usr/local/app/script/Store/cookieKEY
+  rm -r /usr/local/app/script/Store/newone
   git clone ${GIT_URL} /usr/local/app/script/Store
   echo "usr/local/app/script/Store目录"
   break
