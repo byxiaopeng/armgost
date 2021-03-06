@@ -19,3 +19,5 @@ elecv2p:
     # 注意环境变量填写值的时候一律不需要引号（""或者''）下面这些只是事例，根据自己的需求增加删除
     #如果需要node环境运行jd脚本可填写
     - JD_COOKIE=
+   #- TYPE= git
+   #- GIT_URL= https://<name>:<password>@github.com/<name>/<repository>
