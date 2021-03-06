@@ -1,4 +1,13 @@
 #!/bin/bash
+#TYPE=git
+#GIT_URL=https://<name>:<password>@github.com/<name>/<repository>
+case $SA_TYPE in
+"git")
+  git clone ${GIT_URL} /usr/local/app/script/Store
+  echo "usr/local/app/script/Store目录"
+  break
+  ;;
+esac
 if [ ! -e '/usr/local/app/script/Shell/scripts/jdCookie.js' ]; then
     cp -r /tmp/Shell/scripts /usr/local/app/script/Shell
     echo "拷贝仓库代码"
