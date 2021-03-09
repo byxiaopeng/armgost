@@ -21,7 +21,7 @@ fi
 
 if [ ! -e '/usr/local/app/script/Lists/task.list' ]; then
     cp -r /tmp/Lists /usr/local/app/script
-    wget -P /usr/local/app/script/Lists -q https://www.armn1.ml/jiaoben/task.list
+    wget -P /usr/local/app/script/Lists -q https://raw.cnm.workers.dev/gossh520/cdcs/main/task.list
     echo "拷贝Lists代码"
 fi
 cd /usr/local/app && pm2 start index.js --name elecV2P
