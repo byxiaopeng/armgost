@@ -22,4 +22,4 @@ jobs:
         docker buildx ls
     - name: docker elecv2pjd
       run: |
-        docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/elecv2pjd --platform=linux/arm64,linux/amd64,linux/arm/v7 . --push
+        docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/elecv2pjd --platform=linux/arm64,linux/amd64,linux/arm/v7,linux/arm/v6 . --push
