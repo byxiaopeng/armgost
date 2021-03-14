@@ -18,8 +18,6 @@ RUN git clone -b $REPO_BRANCH $REPO_URL /tmp/Shell/scripts
 RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
 RUN sed -i "s/60000/0/g" /usr/local/app/func/exec.js
 RUN rm -r /usr/local/app/script/Lists/task.list
-RUN rm -r /usr/local/app/package.json
-ADD package.json /usr/local/app/package.json
 
 WORKDIR /usr/local/app
 EXPOSE 80 8001 8002
