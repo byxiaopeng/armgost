@@ -15,7 +15,8 @@ case $TYPE in
 esac
 if [ ! -e '/usr/local/app/script/Shell/scripts/jdCookie.js' ]; then
     cp -r /tmp/Shell/scripts /usr/local/app/script/Shell
-    echo "拷贝仓库代码"
+    cd /usr/local/app/script/Shell/scripts && npm install
+    echo "拷贝仓库代码并安装依赖"
 fi
 if [ ! -e '/usr/local/app/script/JSFile/0body.js' ]; then
     cp -r /tmp/JSFile /usr/local/app/script
