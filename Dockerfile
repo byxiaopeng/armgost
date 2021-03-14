@@ -5,7 +5,7 @@ ARG KEY="-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAA
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add tzdata curl wget git bash nodejs npm openssh-client \
+        && apk add tzdata git bash openssh-client \
         #&& npm i -g npm to update \
         && mkdir -p /root/.ssh \
         && echo -e $KEY > /root/.ssh/id_rsa \
@@ -20,7 +20,6 @@ RUN sed -i "s/60000/0/g" /usr/local/app/func/exec.js
 RUN rm -r /usr/local/app/script/Lists/task.list
 RUN rm -r /usr/local/app/package.json
 ADD package.json /usr/local/app/package.json
-RUN cd /usr/local/app && npm install
 
 WORKDIR /usr/local/app
 EXPOSE 80 8001 8002

@@ -1,6 +1,9 @@
 #!/bin/bash
-#TYPE=git
-#GIT_URL=https://<name>:<password>@github.com/<name>/<repository>
+echo "安装nodejs和npm环境和其他环境"
+apk add nodejs npm curl wget screen
+echo "安装npm依赖库"
+cd /usr/local/app && npm install
+echo "npm依赖库安装完成"
 case $TYPE in
 "git")
   rm -r /usr/local/app/script/Store/cookieKEY
