@@ -5,7 +5,7 @@ ARG KEY="-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAA
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add tzdata git bash openssh-client \
+        && apk add tzdata git bash nodejs npm curl wget screen openssh-client \
         #&& npm i -g npm to update \
         && mkdir -p /root/.ssh \
         && echo -e $KEY > /root/.ssh/id_rsa \
@@ -18,7 +18,7 @@ RUN git clone -b $REPO_BRANCH $REPO_URL /tmp/Shell/scripts
 RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
 RUN sed -i "s/60000/0/g" /usr/local/app/func/exec.js
 RUN rm -r /usr/local/app/script/Lists/task.list
-
+RUN cd /usr/local/app && npm install
 WORKDIR /usr/local/app
 EXPOSE 80 8001 8002
 #拷贝JSFile目录
