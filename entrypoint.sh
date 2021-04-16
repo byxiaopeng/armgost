@@ -13,5 +13,5 @@ if [ ! -e '/usr/local/app/script/Lists/task.list' ]; then
     cp -r /tmp/Lists /usr/local/app/script
     echo "拷贝Lists代码"
 fi
-cd /usr/local/app && pm2 start index.js --name elecV2P
+cd /usr/local/app && pm2-docker start index.js --name elecV2P
 tail -f /dev/null
