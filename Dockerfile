@@ -13,7 +13,7 @@ RUN set -ex \
         && ssh-keyscan gitee.com > /root/.ssh/known_hosts \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
-RUN git clone -b $REPO_BRANCH $REPO_URL /tmp/Shell/scripts
+RUN git clone -b $REPO_BRANCH $REPO_URL /tmp/jd/scripts
 RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
 RUN sed -i "s/60000/0/g" /usr/local/app/func/exec.js
 RUN rm -r /usr/local/app/script/Lists/task.list
