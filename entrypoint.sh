@@ -4,7 +4,7 @@ if [ ! -e '/usr/local/app/script/Shell/test.py' ]; then
     echo "拷贝Shell代码"
 fi
 if [ ! -e '/usr/local/app/script/JSFile/jd/jdCookie.js' ]; then
-    cp -r /tmp/jd/scripts /usr/local/app/script/JSFile/jd
+    cp -r /tmp/jd /usr/local/app/script/JSFile/jd
     echo "拷贝jdscripts代码"
 fi
 if [ ! -e '/usr/local/app/script/JSFile/0body.js' ]; then
