@@ -24,6 +24,8 @@ EXPOSE 80 8001 8002
 RUN cp -r /usr/local/app/script/JSFile /tmp
 #拷贝lists目录
 RUN cp -r /usr/local/app/script/Lists /tmp
+#拷贝Shell目录
+RUN cp -r /usr/local/app/script/Shell /tmp
 ENV PATH /usr/local/app/node_modules/.bin:$PATH
 #添加变量
 ADD entrypoint.sh /entrypoint.sh
