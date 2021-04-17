@@ -1,8 +1,7 @@
 #!/bin/bash
-if [ ! -e '/usr/local/app/script/Shell/scripts/jdCookie.js' ]; then
-    cp -r /tmp/Shell/scripts /usr/local/app/script/Shell
-    cd /usr/local/app/script/Shell/scripts && npm install
-    echo "拷贝仓库代码并安装依赖"
+if [ ! -e '/usr/local/app/script/Shell/test.py' ]; then
+    cp -r /tmp/Shell /usr/local/app/script
+    echo "拷贝Shell代码"
 fi
 if [ ! -e '/usr/local/app/script/JSFile/jd/jdCookie.js' ]; then
     cp -r /tmp/Shell/scripts /usr/local/app/script/jd
