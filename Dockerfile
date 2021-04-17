@@ -6,7 +6,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
         && apk add tzdata git bash yarn npm curl wget screen openssh-client \
-        #&& npm i -g npm to update \
         && mkdir -p /root/.ssh \
         && echo -e $KEY > /root/.ssh/id_rsa \
         && chmod 600 /root/.ssh/id_rsa \
