@@ -4,6 +4,9 @@ if [ ! -e '/usr/local/app/script/Shell/scripts/jdCookie.js' ]; then
     cd /usr/local/app/script/Shell/scripts && npm install
     echo "拷贝仓库代码并安装依赖"
 fi
+if [ ! -e '/usr/local/app/script/JSFile/jd/jdCookie.js' ]; then
+    cp -r /tmp/Shell/scripts /usr/local/app/script/jd
+fi
 if [ ! -e '/usr/local/app/script/JSFile/0body.js' ]; then
     cp -r /tmp/JSFile /usr/local/app/script
     echo "拷贝JSFile代码"
