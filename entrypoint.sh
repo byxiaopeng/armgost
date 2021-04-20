@@ -5,7 +5,7 @@ if [ ! -e '/usr/local/app/script/Shell/test.py' ]; then
 fi
 if [ ! -e '/usr/local/app/script/JSFile/jd/jdCookie.js' ]; then
     cp -r /tmp/jd /usr/local/app/script/JSFile/jd
-    cd /usr/local/app/script/JSFile/jd && yarn config set registry https://registry.npm.taobao.org && yarn install --prod --network-timeout 600000
+    cd /usr/local/app/script/JSFile/jd && npm install
     echo "拷贝jdscripts代码"
 fi
 if [ ! -e '/usr/local/app/script/JSFile/0body.js' ]; then
