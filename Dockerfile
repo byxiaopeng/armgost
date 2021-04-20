@@ -16,7 +16,7 @@ RUN git clone -b $REPO_BRANCH $REPO_URL /tmp/jd
 RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
 RUN sed -i "s/60000/0/g" /usr/local/app/func/exec.js
 RUN rm -r /usr/local/app/script/Lists/task.list
-RUN cd /usr/local/app && yarn config set registry https://registry.npm.taobao.org && yarn install --prod --network-timeout 600000
+RUN cd /usr/local/app && npm install
 WORKDIR /usr/local/app
 EXPOSE 80 8001 8002
 #拷贝JSFile目录
