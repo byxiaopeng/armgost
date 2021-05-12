@@ -5,7 +5,7 @@ ARG KEY="-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAA
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add tzdata git bash yarn npm curl wget screen openssh-client \
+        && apk add tzdata git bash nodejs npm curl wget screen openssh-client \
         && mkdir -p /root/.ssh \
         && echo -e $KEY > /root/.ssh/id_rsa \
         && chmod 600 /root/.ssh/id_rsa \
