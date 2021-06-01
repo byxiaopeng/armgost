@@ -18,4 +18,3 @@ if [ ! -e '/usr/local/app/script/Lists/task.list' ]; then
     echo "拷贝Lists代码"
 fi
 cd /usr/local/app && pm2-docker start index.js --name elecV2P
-#tail -f /dev/null
