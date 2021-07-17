@@ -1,7 +1,7 @@
 FROM alpine
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add tzdata git bash nodejs npm curl wget coreutils openssh-client \
+        && apk add tzdata git bash nodejs-current npm curl wget coreutils openssh-client \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
         #&& mkdir -p /root/.ssh \
